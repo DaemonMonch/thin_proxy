@@ -1,0 +1,18 @@
+[package]
+name = "thin_proxy"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+mio = {version = "1", features=["os-poll","net"]}
+env_logger = "0.11.5"
+log = "0.4"
+dns-lookup = "2.0.4"
+rand = "0.8.5"
+url = "2.5.4"
+httparse = "1.9.5"
+nix = {version="0.29.0", features=["zerocopy"]}
+
+[profile.release]
+debug = false
+opt-level = "s"
